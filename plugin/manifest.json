@@ -1,0 +1,258 @@
+{
+  "pluginId": "open-klant",
+  "version": "0.1.0",
+  "provider": "Ritense BV",
+  "compatibility": {
+    "minGzacVersion": "13.47.0"
+  },
+  "translations": {
+    "en": {
+      "name": "Open Klant",
+      "description": "Integration with Open Klant APIs for customer interaction management",
+      "config.title.label": "Configuration name",
+      "config.title.placeholder": "e.g. Open Klant Production",
+      "config.baseUrl.label": "Open Klant Base URL",
+      "config.baseUrl.placeholder": "https://openklant.example.com",
+      "config.baseUrl.help": "Base URL of the Open Klant instance (without trailing slash)",
+      "config.apiToken.label": "API Token",
+      "config.apiToken.placeholder": "Enter API token",
+      "config.apiToken.help": "Authentication token for the Open Klant API",
+      "action.getKlantcontact.title": "Get Klantcontact",
+      "action.getKlantcontact.description": "Retrieve a klantcontact with all related data and store in document",
+      "actionConfig.klantcontactId.label": "Klantcontact UUID",
+      "actionConfig.klantcontactId.placeholder": "pv:klantcontactId or UUID",
+      "actionConfig.klantcontactId.help": "UUID of the klantcontact to retrieve. Either UUID or Number must be filled in.",
+      "actionConfig.klantcontactNummer.label": "Klantcontact Number",
+      "actionConfig.klantcontactNummer.placeholder": "pv:klantcontactNummer or KC0001",
+      "actionConfig.klantcontactNummer.help": "Number of the klantcontact to retrieve. Either UUID or Number must be filled in.",
+      "actionConfig.documentPath.label": "Document Path",
+      "actionConfig.documentPath.placeholder": "/klantcontact",
+      "actionConfig.documentPath.help": "JSON pointer path in the case document where the data will be stored",
+      "action.getPartij.title": "Get Partij",
+      "action.getPartij.description": "Search for an existing party by identifier",
+      "actionConfig.identificatorType.label": "Identifier Type",
+      "actionConfig.identificatorType.placeholder": "bsn, kvk_nummer, rsin, vestigingsnummer",
+      "actionConfig.identificatorType.help": "Type of identifier to search by",
+      "actionConfig.identificatorValue.label": "Identifier Value",
+      "actionConfig.identificatorValue.placeholder": "The identifier value to search for",
+      "actionConfig.identificatorValue.help": "Value of the identifier (e.g. BSN number or KVK number)",
+      "action.createKlantcontact.title": "Create Klantcontact",
+      "action.createKlantcontact.description": "Create a new klantcontact in Open Klant",
+      "actionConfig.kanaal.label": "Channel",
+      "actionConfig.kanaal.placeholder": "telefoon, email, balie",
+      "actionConfig.onderwerp.label": "Subject",
+      "actionConfig.onderwerp.placeholder": "Subject of the contact",
+      "actionConfig.inhoud.label": "Content",
+      "actionConfig.inhoud.placeholder": "Description of the contact",
+      "actionConfig.partijId.label": "Partij UUID",
+      "actionConfig.partijId.placeholder": "UUID of the involved party",
+      "actionConfig.zaakUrl.label": "Zaak URL",
+      "actionConfig.zaakUrl.placeholder": "URL of the related zaak",
+      "action.createPartijPersoon.title": "Create Partij (Person)",
+      "action.createPartijPersoon.description": "Create a person as a party in Open Klant",
+      "actionConfig.voornaam.label": "First Name",
+      "actionConfig.achternaam.label": "Last Name",
+      "actionConfig.bsn.label": "BSN",
+      "actionConfig.email.label": "Email",
+      "actionConfig.telefoon.label": "Phone",
+      "action.createPartijOrganisatie.title": "Create Partij (Organization)",
+      "action.createPartijOrganisatie.description": "Create an organization as a party in Open Klant",
+      "actionConfig.naam.label": "Name",
+      "actionConfig.kvkNummer.label": "KVK Number",
+      "action.createPersoon.title": "Create Person",
+      "action.createPersoon.description": "Create a person in the contactgegevens API",
+      "actionConfig.geslachtsnaam.label": "Family Name",
+      "actionConfig.geboortedatum.label": "Birth Date",
+      "action.createOrganisatie.title": "Create Organization",
+      "action.createOrganisatie.description": "Create an organization in the contactgegevens API",
+      "actionConfig.handelsnaam.label": "Trade Name"
+    },
+    "nl": {
+      "name": "Open Klant",
+      "description": "Integratie met Open Klant APIs voor klantinteractie beheer",
+      "config.title.label": "Configuratienaam",
+      "config.title.placeholder": "bijv. Open Klant Productie",
+      "config.baseUrl.label": "Open Klant Basis URL",
+      "config.baseUrl.placeholder": "https://openklant.voorbeeld.nl",
+      "config.baseUrl.help": "Basis URL van de Open Klant instance (zonder trailing slash)",
+      "config.apiToken.label": "API Token",
+      "config.apiToken.placeholder": "Voer API token in",
+      "config.apiToken.help": "Authenticatie token voor de Open Klant API",
+      "action.getKlantcontact.title": "Haal Klantcontact op",
+      "action.getKlantcontact.description": "Haal een klantcontact op met alle gerelateerde data en sla op in document",
+      "actionConfig.klantcontactId.label": "Klantcontact UUID",
+      "actionConfig.klantcontactId.placeholder": "pv:klantcontactId of UUID",
+      "actionConfig.klantcontactId.help": "UUID van het klantcontact. Vul UUID of Nummer in.",
+      "actionConfig.klantcontactNummer.label": "Klantcontact Nummer",
+      "actionConfig.klantcontactNummer.placeholder": "pv:klantcontactNummer of KC0001",
+      "actionConfig.klantcontactNummer.help": "Nummer van het klantcontact. Vul UUID of Nummer in.",
+      "actionConfig.documentPath.label": "Document Pad",
+      "actionConfig.documentPath.placeholder": "/klantcontact",
+      "actionConfig.documentPath.help": "JSON pointer pad in het case document waar de data wordt opgeslagen",
+      "action.getPartij.title": "Zoek Partij",
+      "action.getPartij.description": "Zoek een bestaande partij op identificator",
+      "actionConfig.identificatorType.label": "Identificator Type",
+      "actionConfig.identificatorType.placeholder": "bsn, kvk_nummer, rsin, vestigingsnummer",
+      "actionConfig.identificatorType.help": "Type identificator om op te zoeken",
+      "actionConfig.identificatorValue.label": "Identificator Waarde",
+      "actionConfig.identificatorValue.placeholder": "De waarde van de identificator",
+      "actionConfig.identificatorValue.help": "Waarde van de identificator (bijv. BSN nummer of KVK nummer)",
+      "action.createKlantcontact.title": "Klantcontact Aanmaken",
+      "action.createKlantcontact.description": "Maak een nieuw klantcontact aan in Open Klant",
+      "actionConfig.kanaal.label": "Kanaal",
+      "actionConfig.kanaal.placeholder": "telefoon, email, balie",
+      "actionConfig.onderwerp.label": "Onderwerp",
+      "actionConfig.onderwerp.placeholder": "Onderwerp van het contact",
+      "actionConfig.inhoud.label": "Inhoud",
+      "actionConfig.inhoud.placeholder": "Beschrijving van het contact",
+      "actionConfig.partijId.label": "Partij UUID",
+      "actionConfig.partijId.placeholder": "UUID van de betrokken partij",
+      "actionConfig.zaakUrl.label": "Zaak URL",
+      "actionConfig.zaakUrl.placeholder": "URL van de gerelateerde zaak",
+      "action.createPartijPersoon.title": "Partij Aanmaken (Persoon)",
+      "action.createPartijPersoon.description": "Maak een persoon aan als partij in Open Klant",
+      "actionConfig.voornaam.label": "Voornaam",
+      "actionConfig.achternaam.label": "Achternaam",
+      "actionConfig.bsn.label": "BSN",
+      "actionConfig.email.label": "E-mail",
+      "actionConfig.telefoon.label": "Telefoon",
+      "action.createPartijOrganisatie.title": "Partij Aanmaken (Organisatie)",
+      "action.createPartijOrganisatie.description": "Maak een organisatie aan als partij in Open Klant",
+      "actionConfig.naam.label": "Naam",
+      "actionConfig.kvkNummer.label": "KVK Nummer",
+      "action.createPersoon.title": "Persoon Aanmaken",
+      "action.createPersoon.description": "Maak een persoon aan in de contactgegevens API",
+      "actionConfig.geslachtsnaam.label": "Geslachtsnaam",
+      "actionConfig.geboortedatum.label": "Geboortedatum",
+      "action.createOrganisatie.title": "Organisatie Aanmaken",
+      "action.createOrganisatie.description": "Maak een organisatie aan in de contactgegevens API",
+      "actionConfig.handelsnaam.label": "Handelsnaam"
+    }
+  },
+  "configurationSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "baseUrl": {
+        "type": "string",
+        "format": "uri",
+        "title": "Open Klant Base URL",
+        "x-egress-target": true
+      },
+      "apiToken": {
+        "type": "string",
+        "title": "API Token",
+        "x-secret": true
+      }
+    },
+    "required": ["baseUrl", "apiToken"],
+    "additionalProperties": false
+  },
+  "permissions": {
+    "capabilities": ["http_request", "gzac_api", "log"],
+    "endpoints": [
+      { "method": "GET", "pattern": "/api/v1/document/*" },
+      { "method": "PUT", "pattern": "/api/v1/document" }
+    ],
+    "egress": []
+  },
+  "frontendBundles": [
+    {"type": "config", "path": "/bundles/config.html"},
+    {"type": "process-link-action", "key": "get-klantcontact", "title": "Get Klantcontact", "path": "/bundles/action-get-klantcontact.html"},
+    {"type": "process-link-action", "key": "get-partij", "title": "Get Partij", "path": "/bundles/action-get-partij.html"},
+    {"type": "process-link-action", "key": "create-klantcontact", "title": "Create Klantcontact", "path": "/bundles/action-create-klantcontact.html"},
+    {"type": "process-link-action", "key": "create-partij-persoon", "title": "Create Partij (Person)", "path": "/bundles/action-create-partij-persoon.html"},
+    {"type": "process-link-action", "key": "create-partij-organisatie", "title": "Create Partij (Organization)", "path": "/bundles/action-create-partij-organisatie.html"},
+    {"type": "process-link-action", "key": "create-persoon", "title": "Create Person", "path": "/bundles/action-create-persoon.html"},
+    {"type": "process-link-action", "key": "create-organisatie", "title": "Create Organization", "path": "/bundles/action-create-organisatie.html"}
+  ],
+  "actions": [
+    {
+      "key": "get-klantcontact",
+      "title": "Get Klantcontact",
+      "description": "Retrieve a klantcontact with all related data and store in document",
+      "activityTypes": ["SERVICE_TASK_START"],
+      "properties": [
+        {"key": "klantcontactId", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "klantcontactNummer", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "documentPath", "type": "string", "required": true}
+      ],
+      "outputs": ["success", "klantcontactUuid"]
+    },
+    {
+      "key": "get-partij",
+      "title": "Get Partij",
+      "description": "Search for an existing party by identifier (BSN, KVK, etc.)",
+      "activityTypes": ["SERVICE_TASK_START"],
+      "properties": [
+        {"key": "identificatorType", "type": "string", "required": true, "x-value-resolver": true},
+        {"key": "identificatorValue", "type": "string", "required": true, "x-value-resolver": true}
+      ],
+      "outputs": ["partijUuid", "partijFound"]
+    },
+    {
+      "key": "create-klantcontact",
+      "title": "Create Klantcontact",
+      "description": "Create a new klantcontact in Open Klant",
+      "activityTypes": ["SERVICE_TASK_START"],
+      "properties": [
+        {"key": "kanaal", "type": "string", "required": true, "x-value-resolver": true},
+        {"key": "onderwerp", "type": "string", "required": true, "x-value-resolver": true},
+        {"key": "inhoud", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "partijId", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "zaakUrl", "type": "string", "required": false, "x-value-resolver": true}
+      ],
+      "outputs": ["klantcontactUuid"]
+    },
+    {
+      "key": "create-partij-persoon",
+      "title": "Create Partij (Person)",
+      "description": "Create a person as a party in Open Klant",
+      "activityTypes": ["SERVICE_TASK_START"],
+      "properties": [
+        {"key": "voornaam", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "achternaam", "type": "string", "required": true, "x-value-resolver": true},
+        {"key": "bsn", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "email", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "telefoon", "type": "string", "required": false, "x-value-resolver": true}
+      ],
+      "outputs": ["partijUuid"]
+    },
+    {
+      "key": "create-partij-organisatie",
+      "title": "Create Partij (Organization)",
+      "description": "Create an organization as a party in Open Klant",
+      "activityTypes": ["SERVICE_TASK_START"],
+      "properties": [
+        {"key": "naam", "type": "string", "required": true, "x-value-resolver": true},
+        {"key": "kvkNummer", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "email", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "telefoon", "type": "string", "required": false, "x-value-resolver": true}
+      ],
+      "outputs": ["partijUuid"]
+    },
+    {
+      "key": "create-persoon",
+      "title": "Create Person",
+      "description": "Create a person in the contactgegevens API",
+      "activityTypes": ["SERVICE_TASK_START"],
+      "properties": [
+        {"key": "geslachtsnaam", "type": "string", "required": true, "x-value-resolver": true},
+        {"key": "voornamen", "type": "string", "required": false, "x-value-resolver": true},
+        {"key": "geboortedatum", "type": "string", "required": false, "x-value-resolver": true}
+      ],
+      "outputs": ["persoonUuid"]
+    },
+    {
+      "key": "create-organisatie",
+      "title": "Create Organization",
+      "description": "Create an organization in the contactgegevens API",
+      "activityTypes": ["SERVICE_TASK_START"],
+      "properties": [
+        {"key": "handelsnaam", "type": "string", "required": true, "x-value-resolver": true},
+        {"key": "oprichtingsdatum", "type": "string", "required": false, "x-value-resolver": true}
+      ],
+      "outputs": ["organisatieUuid"]
+    }
+  ]
+}
